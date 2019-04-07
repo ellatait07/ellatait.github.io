@@ -16,7 +16,6 @@ class Rectangle{
 
     draw(){
         this.drawRect(this.x, this.y, this.w, this.h, this.c1);
-        //console.log(this.c1)
         
     }
 
