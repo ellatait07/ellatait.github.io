@@ -31,9 +31,9 @@ class ControlObjectRect{
     mDown(e){
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
-        if(this.rectBoundCheck(this.xMouse, this.yMouse, this.xMouseStart, this.yMouseStart, this.xB, this.yB, this.wB, this.hB)){
+        /*if(this.rectBoundCheck(this.xMouse, this.yMouse, this.xMouseStart, this.yMouseStart, this.xB, this.yB, this.wB, this.hB)){
             this.mouseDown = true;
-        }
+        }*/
         console.log(this.mouseDown);
         
     }
@@ -41,15 +41,17 @@ class ControlObjectRect{
     mMove(e){
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
-        
+        if(this.rectBoundCheck(this.xMouse, this.yMouse, this.xMouseStart, this.yMouseStart, this.xB, this.yB, this.wB, this.hB)){
+            this.mouseDown = true;
+        }
     }
 
     mUp(e){
         this.mouseDown = false;
-        if(this.rectBoundCheck(this.xMouse, this.yMouse, this.xMouseStart, this.yMouseStart, this.xB, this.yB, this.wB, this.hB)){
+        /*if(this.rectBoundCheck(this.xMouse, this.yMouse, this.xMouseStart, this.yMouseStart, this.xB, this.yB, this.wB, this.hB)){*/
             var ROne = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, this.col);
             this.objectSet.push(ROne);
-        }
+        //}
         
     }
 
